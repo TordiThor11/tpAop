@@ -12,6 +12,7 @@ public class PersistenceApi implements IApi {
     }
 
     @Override
+    @Log
     public ArrayList<Concurso> obtenerConcursos() throws Exception {
         return ioData.obtenerConcursos();
     }
@@ -24,9 +25,9 @@ public class PersistenceApi implements IApi {
     }
 
     @Override
-    @Marca
+    @Log
     public void cargarParticipante(Participante participante, Concurso concurso) throws Exception {
-//        ioData.cargarParticipante(participante, concurso);
+        ioData.cargarParticipante(participante, concurso);
     }
 
     @Override
