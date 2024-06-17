@@ -23,21 +23,21 @@ public class Main {
             }
         });
 
-        var bd = new EnDiscoDB("C:\\Users\\Valentin\\IdeaProjects\\tpLayers\\src\\main\\resources\\concursos.txt", "C:\\Users\\Valentin\\IdeaProjects\\tpLayers\\src\\main\\resources\\inscriptos.txt");
+        var bd = new EnDiscoDB("src/main/resources/concursos.txt", "src/main/resources/inscriptos.txt");
         var memoryApi = new PersistenceApi(bd);
         ArrayList<Concurso> concursos;
         try {
             var participante = new Participante("perez", "pepe", "2020-123123", "mail@example.com");
-//            concursos = memoryApi.obtenerConcursosAbiertos();
+            concursos = memoryApi.obtenerConcursosAbiertos();
 //            bd.cargarParticipante(new Participante("Gomez", "Pepe", "1234-123123", "pepin@gmail.com"), new Concurso(3, "concurso main", LocalDate.of(2024, 3, 15), LocalDate.of(2024, 8, 5)));
             memoryApi.cargarParticipante(participante, new Concurso(3, "concurso main", LocalDate.of(2024, 3, 15), LocalDate.of(2024, 8, 5)));
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-        /*for (Concurso concurso : concursos) {
+        for (Concurso concurso : concursos) {
             System.out.println(concurso.toString());
-        }*/
+        }
 
 //        var concurso = new Concurso(3, "concurso main", LocalDate.of(2024, 4, 25), LocalDate.of(2024, 8, 25));
 
